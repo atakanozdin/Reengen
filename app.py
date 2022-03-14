@@ -3,6 +3,7 @@
 import pandas as pd
 import streamlit as st
 import datetime
+import xlrd
 import plotly.graph_objects as go
 import warnings
 warnings.filterwarnings("ignore")
@@ -118,9 +119,9 @@ tabs= ["Öngörü","Görselleştirme","Hakkında"]
 page = st.sidebar.radio("Sekmeler",tabs)
 
 if page == "Öngörü":
-    st.markdown("<h1 style='text-align:center;'>Elektrik Tüketimi Öngörü Çalışması</h1>",unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align:center;'>Consumption (kWh) Öngörü Çalışması</h1>",unsafe_allow_html=True)
     st.write("""Bu sayfada tahmin uzunluğı seçilerek sonuçlar elde edilmektedir.""")
-    fh_selection=st.selectbox("Tahmin uzunluğunu seçiniz",["1 gün","2 gün","3 gün","1 hafta","2 hafta"])
+    fh_selection=st.selectbox("Tahmin uzunluğunu seçiniz(Max 4 hafta)",["1 gün","2 gün","3 gün","1 hafta","2 hafta","3 hafta","4 hafta"])
     button=st.button("Tahmin Et")
 
     if button==True:
