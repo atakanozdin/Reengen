@@ -3,7 +3,7 @@
 import pandas as pd
 import streamlit as st
 import datetime
-import xlrd
+import openpyxl
 import plotly.graph_objects as go
 import warnings
 warnings.filterwarnings("ignore")
